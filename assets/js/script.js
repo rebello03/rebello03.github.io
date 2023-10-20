@@ -103,3 +103,30 @@ if (localStorage.getItem("theme") === "light_theme") {
   document.body.classList.remove("light_theme");
   document.body.classList.add("dark_theme");
 }
+
+
+// Select the form element by its id
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent the form from submitting
+
+  // Get form input values
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const message = document.getElementById('message').value;
+
+  // Perform basic validation (you can add more specific validation)
+  if (!name || !email || !phone || !message) {
+    alert('Please fill in all fields');
+    return;
+  }
+
+  // If all fields are filled, you can proceed with form submission
+  // You can send the form data to a server here using AJAX or any method of your choice
+
+  // For this example, we'll just display a success message
+  alert('Form submitted successfully!');
+  contactForm.reset(); // Clear the form fields
+});
